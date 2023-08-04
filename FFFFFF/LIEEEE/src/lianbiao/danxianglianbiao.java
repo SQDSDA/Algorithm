@@ -2,6 +2,7 @@ package lianbiao;
 
 
 
+import javax.swing.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.function.Consumer;
@@ -63,6 +64,23 @@ public class danxianglianbiao implements Iterable<Integer>{
         for (Node p = head; p != null; p = p.next) {
             consumer.accept(p.value);
         }
+    }
+
+    public void loop3(Consumer<Integer> before, Consumer<Integer> after){
+        recursion(head, before, after);
+    }
+
+    private void recursion(Node curr, Consumer<Integer> before,
+                           Consumer<Integer> after){
+        if (curr == null){
+            return;
+        }
+
+        // 如果代码顺序换一下，会发现是逆序打印
+        // 递归的过程是
+        before.accept(curr.value);
+        recursion(curr.next, before, after);
+        after.accept(curr.value);
     }
 
     public Node findLast(){
