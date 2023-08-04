@@ -128,9 +128,9 @@ public class danxianglianbiao implements Iterable<Integer>{
     }
     // 单向链表中的remove 删除第一个节点
     // 让head指针指向第二个节点就行
-    public void removeFirst() {
-        head = head.next;
-    }
+//    public void removeFirst() {
+//        head = head.next;
+//    }
 
 
 
