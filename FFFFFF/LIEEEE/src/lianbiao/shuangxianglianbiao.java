@@ -1,5 +1,6 @@
 package lianbiao;
 import java.util.Iterator;
+import java.util.function.Consumer;
 
 public class shuangxianglianbiao {
     static class Node {
@@ -25,7 +26,7 @@ public class shuangxianglianbiao {
     }
 
     // 根据索引位置找节点
-    private Node findNode(int index) {
+    public Node findNode(int index) {
         int i = -1;
         for (Node p = head; p != tail; p = p.next, i++){
             if (i == index) {
@@ -36,7 +37,26 @@ public class shuangxianglianbiao {
     }
 
     public void addLast(int value){
+        Node p1 = new Node(tail.prve, value, tail);
+        Node p2 = tail.prve;
+        p2.next = p1;
+        tail.prve = p1;
+    }
 
+    public void Insert(int index, int value){
+        Node p1 = findNode(index);
+        Node p2 = p1.next;
+        Node p = new Node(p1, value, p1.next);
+        p1.next = p;
+        p2.prve = p;
+    }
+
+    public void loop(Consumer<Integer> consumer){
+        Node p = head.next;
+        while (p != tail) {
+            consumer.accept(p.value);
+            p = p.next;
+        }
     }
 
 
