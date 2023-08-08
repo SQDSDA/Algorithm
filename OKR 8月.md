@@ -8,6 +8,8 @@ grammar_cjkRuby: true
 
 
 ----------
+# 定义
+1. 学完 = 跟着敲代码 + 理解完毕。
 # 8月
 1. 算法——学完
 【2023新版数据结构与算法Java视频教程（上篇），java高级程序员必学的数据结构与算法】https://www.bilibili.com/video/BV1Lv4y1e7HL?p=54&vd_source=275a1f2c6c66abf8c73961fb32ca1196
