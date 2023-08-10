@@ -93,3 +93,20 @@ export default {
 ~~~
 5. 对于Event对象的理解
 https://blog.csdn.net/m0_51528800/article/details/124811763?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3Event%E5%AF%B9%E8%B1%A1&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-124811763.142^v92^chatsearchT0_1&spm=1018.2226.3001.4187
+6. VUE侦听数组
+ 方法的区别在于：会不会引起UI的自动更新
+ 变更方法
+![enter description here](./images/1691598685845.png)
+替换一个数组
+![enter description here](./images/1691598832011.png)
+7. 计算属性
+![enter description here](./images/1691599272347.png)
+计算属性和方法的区别：
+![enter description here](./images/1691599716344.png)
+8. VUE的class绑定
+![enter description here](./images/1691599932133.png)
+9. 如何理解条件判断
+
+ 10. 表单输入绑定的修饰符
+ ![enter description here](./images/1691630999039.png)
+ 
