@@ -1,5 +1,6 @@
 package duilie;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Queue;
 
@@ -16,6 +17,8 @@ public class LinkedListQueue<E>
         }
     }
 
+
+    // head是哨兵节点
     Node<E> head = new Node<>(null, null);
     Node<E> tail = head;
 
@@ -29,33 +32,110 @@ public class LinkedListQueue<E>
         tail = added;
         return true;
     }
-
-
-    public boolean add(E e) {
-        return true;
-    }
-    @Override
-    public boolean remove(Object o) {
-        // 在队列中移除指定元素的实现
-        // ... 遍历链表，找到要移除的元素，并执行相应操作 ...
-        return true; // 或者返回适当的布尔值
-    }
-
-
-
-
+    // 要特别去理解 p = p.next这种迭代方法
+    // 通过这种方式的迭代
     public Iterator<E> iterator() {
         return new Iterator<E>() {
+            Node<E> p = head.next;
             @Override
             public boolean hasNext() {
-                return false;
+                return p != head;
             }
 
             @Override
             public E next() {
-                return null;
+                E value = p.value;
+                p = p.next;
+                return value;
             }
         };
+    }
+
+    @Override
+    public boolean add(E e) {
+        return false;
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return false;
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends E> c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public E remove() {
+        return null;
+    }
+
+    @Override
+    public E poll() {
+        return null;
+    }
+
+    @Override
+    public E element() {
+        return null;
+    }
+
+    // 用peek() 获取第一个节点的值
+    @Override
+    public E peek() {
+        if (isEmpty()) {
+            return null;
+        }
+        return null;
+    }
+
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return head == tail;
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return false;
+    }
+
+
+
+    @Override
+    public Object[] toArray() {
+        return new Object[0];
+    }
+
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return null;
     }
 
 }
