@@ -109,4 +109,7 @@ https://blog.csdn.net/m0_51528800/article/details/124811763?ops_request_misc=&re
 
  10. 表单输入绑定的修饰符
  ![enter description here](./images/1691630999039.png)
- 
+ 11. VUE的组件组成![enter description here](./images/1691938169459.png)
+12. 组件的嵌套关系
+![enter description here](./images/1691945264764.png)
+创建组件及引用关系
