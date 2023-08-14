@@ -113,3 +113,6 @@ https://blog.csdn.net/m0_51528800/article/details/124811763?ops_request_misc=&re
 12. 组件的嵌套关系
 ![enter description here](./images/1691945264764.png)
 创建组件及引用关系
+13. 全局注册和局部注册间的关系
+ 不推荐使用全局注册，还是推荐使用局部注册
+![enter description here](./images/1692035692248.png)
