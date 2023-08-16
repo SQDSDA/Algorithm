@@ -116,3 +116,81 @@ https://blog.csdn.net/m0_51528800/article/details/124811763?ops_request_misc=&re
 13. 全局注册和局部注册间的关系
  不推荐使用全局注册，还是推荐使用局部注册
 ![enter description here](./images/1692035692248.png)
+14. 对于VUE组件中的$emit方法的理解
+~~~
+在Vue中，`this.$emit` 是用于在子组件中触发自定义事件的方法。在这个方法中，第一个参数是事件的名称，也就是一个字符串，用于标识这个事件。这个事件名称可以自定义，你可以根据自己的需求来命名。
+
+例如，`this.$emit("someEvent", "Child数据")` 中的 `"someEvent"` 就是自定义的事件名称。这个名称用于在父组件中监听这个事件，然后执行相应的操作。
+
+当子组件调用 `this.$emit("someEvent", "Child数据")` 后，父组件可以通过在模板中监听这个事件来捕获触发的操作。例如：
+
+```vue
+<template>
+  <div>
+    <ChildComponent @someEvent="handleChildEvent" />
+  </div>
+</template>
+```
+
+在父组件中，`@someEvent="handleChildEvent"` 表示监听名为 `someEvent` 的事件，并在事件被触发时调用名为 `handleChildEvent` 的方法。当子组件中的 `this.$emit("someEvent", "Child数据")` 被调用时，父组件的 `handleChildEvent` 方法会被执行，可以在这个方法中获取子组件传递的数据 `"Child数据"`。
+
+总之，事件名称作为 `this.$emit` 的第一个参数，用于定义一个自定义事件，使得子组件可以向父组件传递数据或通知父组件发生的事件。
+~~~
+**如果想用this.$emit传递多个参数的写法**
+~~~
+如果你想传递多个数据，你可以将这些数据包装成一个对象或数组，然后将整个对象或数组作为 `this.$emit` 的第二个参数进行传递。在父组件中，你可以通过监听事件的回调函数来获取整个对象或数组，然后根据需要进行解析和处理。
+
+例如，假设你想传递多个数据项给父组件，你可以这样写：
+
+在子组件：
+
+```javascript
+this.$emit("someEvent", { key1: value1, key2: value2, key3: value3 });
+```
+
+在父组件模板中监听事件：
+
+```vue
+<template>
+  <div>
+    <ChildComponent @someEvent="handleChildEvent" />
+  </div>
+</template>
+```
+
+在父组件的方法中处理事件：
+
+```javascript
+methods: {
+  handleChildEvent(data) {
+    console.log(data.key1); // 访问传递过来的数据项
+    console.log(data.key2);
+    console.log(data.key3);
+  }
+}
+```
+
+这样你就可以将多个数据项一起传递给父组件，并在父组件中获取和处理它们。
+
+同样，你也可以使用数组来传递多个数据项，类似于：
+
+在子组件：
+
+```javascript
+this.$emit("someEvent", [value1, value2, value3]);
+```
+
+在父组件方法中处理事件：
+
+```javascript
+methods: {
+  handleChildEvent(dataArray) {
+    console.log(dataArray[0]); // 访问传递过来的数据项
+    console.log(dataArray[1]);
+    console.log(dataArray[2]);
+  }
+}
+```
+
+无论使用对象还是数组，目标是将多个数据项封装在一个结构中，然后传递给父组件进行处理。
+~~~
