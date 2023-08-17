@@ -91,6 +91,7 @@ public class LinkedListQueue<E>
         return null;
     }
 
+    // 从队列头获取第一个节点值，并移除
     @Override
     public E poll() {
         return null;
@@ -107,7 +108,7 @@ public class LinkedListQueue<E>
         if (isEmpty()) {
             return null;
         }
-        return null;
+        return head.next.value;
     }
 
 

@@ -51,6 +51,48 @@ public class fanzhaundangxianglianbiao {
         return list2.head;
     }
 
+    // 解题思路4：
+    // 每一次把第二个节点移到头部，有点排序算法的感觉
+    // 对于思路4的理解：
+    // 看看它是怎么更新head的
+    public ListNode reverseList4(ListNode head){
+        // 对于边界条件的考虑
+        // 1. 空链表
+        // 2. 一个元素
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode o2 = head.next;
+        ListNode n1 = head;
+        while(head.next != null) { // 1  //
+            head.next = o2.next;
+            o2.next = n1;
+            n1 = o2; // 每一次都更新一下，让n1保持head
+            o2 = head.next;
+            System.out.println(n1);
+        }
+        return head;
+    }
+
+    // 解题思路5
+    // 要点：把新链表分成两部分，思路是不断的从链表2的头，往链表1的头搬
+    // 和思路4的差别在于：
+    // 直接把head节点给搬运到最后，没有交换的过程
+    public ListNode reverseList5(ListNode head){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode n1 = null;
+        while (head != null){
+            ListNode o2 = head.next;
+            head.next = n1;
+            n1 = head;
+            head = o2;
+        }
+        return head;
+    }
+
+
     public static void main(String[] args) {
         ListNode o5 = new ListNode(5, null);
         ListNode o4 = new ListNode(4, o5);
@@ -60,5 +102,8 @@ public class fanzhaundangxianglianbiao {
 
         ListNode n1 = new fanzhaundangxianglianbiao().reverseList(o1);
         System.out.println(n1.val);
+
+        ListNode n2 = new fanzhaundangxianglianbiao().reverseList4(o1);
+        System.out.println(n2.val);
     }
 }
