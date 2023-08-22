@@ -119,3 +119,38 @@ public <T> T findMax(T[] array) {
 - **性能优化：** 泛型避免了不必要的类型转换，可以提高程序的执行效率。
 
 总之，泛型是Java中一种强大的编程特性，有助于编写更加灵活、类型安全且可重用的代码。
+## JAVA中的复制方法
+`System.arraycopy` 是Java中用于数组复制的方法。它允许你将一个数组的一部分内容复制到另一个数组的指定位置。以下是该方法的签名和说明：
+
+```java
+public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+```
+
+- `src`: 源数组，从该数组复制数据。
+- `srcPos`: 源数组中的起始位置，从这个位置开始复制数据。
+- `dest`: 目标数组，数据将复制到这个数组中。
+- `destPos`: 目标数组中的起始位置，数据将从这个位置开始写入。
+- `length`: 要复制的元素数量。
+
+这个方法可以用来复制各种类型的数组，例如基本数据类型（如整数、浮点数）数组，以及引用类型（如对象）数组。
+
+示例用法：
+
+```java
+public class ArrayCopyExample {
+    public static void main(String[] args) {
+        int[] sourceArray = {1, 2, 3, 4, 5};
+        int[] destinationArray = new int[5];
+
+        // 将 sourceArray 中的数据从索引 1 复制到 destinationArray 的索引 2 开始的位置，共复制 3 个元素
+        System.arraycopy(sourceArray, 1, destinationArray, 2, 3);
+
+        // 打印结果：0 0 2 3 4
+        for (int num : destinationArray) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+在这个例子中，`System.arraycopy` 从 `sourceArray` 的索引 1 处开始复制 3 个元素到 `destinationArray` 的索引 2 处开始的位置。
