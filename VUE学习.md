@@ -205,3 +205,5 @@ VUE可以做的只有前台解决
 ![enter description here](./images/1692803445498.png)
 18. 对于Vuex中mutation的解释
 ![enter description here](./images/1692805498873.png)
+19. VUEX中的action
+![enter description here](./images/1692806432427.png)
