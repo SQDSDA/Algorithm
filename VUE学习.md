@@ -196,3 +196,7 @@ methods: {
 ~~~
 15. VUE组件的生命周期
 ![enter description here](./images/1692287540365.png)
+16. 利用VUE解决跨域问题
+如何理解跨域：就是请求和当前服务器不一样的服务器域名和端口：
+只有两种解决办法
+![enter description here](./images/1692797261499.png)
