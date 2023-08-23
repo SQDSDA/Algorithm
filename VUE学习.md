@@ -198,5 +198,10 @@ methods: {
 ![enter description here](./images/1692287540365.png)
 16. 利用VUE解决跨域问题
 如何理解跨域：就是请求和当前服务器不一样的服务器域名和端口：
-只有两种解决办法
+只有两种解决办法后端解决和前台解决
+VUE可以做的只有前台解决
 ![enter description here](./images/1692797261499.png)
+17.对于Vuex的理解
+![enter description here](./images/1692803445498.png)
+18. 对于Vuex中mutation的解释
+![enter description here](./images/1692805498873.png)
