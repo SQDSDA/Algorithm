@@ -207,3 +207,5 @@ VUE可以做的只有前台解决
 ![enter description here](./images/1692805498873.png)
 19. VUEX中的action
 ![enter description here](./images/1692806432427.png)
+20. VUE3新特性
+![enter description here](./images/1692838250865.png)
