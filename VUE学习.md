@@ -210,3 +210,11 @@ VUE可以做的只有前台解决
 20. VUE3新特性
 ![enter description here](./images/1692838250865.png)
 21. 对于padding的理解
+https://www.freecodecamp.org/chinese/news/css-padding/
+如果在元素之间创建空间，则需要通过margin完成
+22. 对于borad的理解
+border是边框，可以这么理解，所以会有厚度，也会有颜色等等
+![enter description here](./images/1693143970043.png)
+23. 对于自适应解决方案的理解——控制父元素，接着使用相对动作即可
+24. 对于VUE3中ref的理解
+ref 是 Vue 3 中的一个函数，用于将普通的 JavaScript 数据转换成响应式数据，使其在 Vue 组件中能够被自动追踪和更新。
