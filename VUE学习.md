@@ -218,3 +218,4 @@ border是边框，可以这么理解，所以会有厚度，也会有颜色等�
 23. 对于自适应解决方案的理解——控制父元素，接着使用相对动作即可
 24. 对于VUE3中ref的理解
 ref 是 Vue 3 中的一个函数，用于将普通的 JavaScript 数据转换成响应式数据，使其在 Vue 组件中能够被自动追踪和更新。
+25. justify-content: center;    align-items: center; 这俩的区别在于何处？
