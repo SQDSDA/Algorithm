@@ -4,10 +4,12 @@ package lianbiao.fanzhuan;
 public class fanzhaundangxianglianbiao {
     // 反转单向链表的解题思路1：
     // 构造一个新链表，从旧链表依次拿到每个节点，创建新节点添加至新链表头部，完成后新链表是倒序的
+    //
     public ListNode reverseList(ListNode o1) {
         ListNode n1 = null;
         ListNode p = o1;
         while (p != null) {
+            // 从尾部开始加
             n1 = new ListNode(p.val, n1);
             p = p.next;
         }

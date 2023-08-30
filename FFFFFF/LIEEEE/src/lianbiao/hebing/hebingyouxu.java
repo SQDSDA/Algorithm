@@ -43,7 +43,26 @@ public class hebingyouxu {
         return head1;
     }
 
-    // 尝试用一个又递又归的写法
+    // 递归写法——视频的解法
+    // 要有递归的思维想象
+    public static ListNode hebing_digui(ListNode head1, ListNode head2) {
+        // 新创一个节点
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null){
+            return head1;
+        }
+        if (head1.val < head2.val) {
+            head1.next = hebing_digui(head1.next, head2);
+            return head1;
+        } else {
+            head2.next = hebing_digui(head1, head2.next);
+            return head2;
+        }
+    }
+
+//     尝试用一个又递又归的写法
 //    private static ListNode maopao(ListNode head){
 //        return head;
 //    }

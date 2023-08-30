@@ -1,6 +1,7 @@
 package paixu;
 
 public class charupaixu {
+    // 插入排序的思想：
     // 插入排序和冒泡排序的思想差异有哪些？
     // 排序的处理方式是一样的，但是在基本有序的情况下，插入排序的时间复杂度会耕地
     public static int[] test1(int[] a) {
